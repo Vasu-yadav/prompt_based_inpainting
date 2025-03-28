@@ -39,9 +39,13 @@ pip install -r requirements.txt
 
 4. Run the Fooocus inpainting API locally:
 - Follow Below steps to setup Fooocus API
-    1. `cd Fooocus`
-    2. `Docker build -t fooocusapi -f API_Dockerfile.dockerfile .`
-    3. ```
+    1. ```bash 
+        cd Fooocus
+        ```
+    2. ```bash
+        Docker build -t fooocusapi -f API_Dockerfile.dockerfile .
+        ```
+    3. ```bash
         docker run -d \
         --name fooocus_api \
         -p 0.0.0.0:1505:1505 \
