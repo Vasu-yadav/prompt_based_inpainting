@@ -1,0 +1,9 @@
+supervision==0.6.0
+torch==2.4.0
+torchvision==0.19.0
+transformers==4.48.2
+segment-anything==1.0
+gdown==5.2.0
+gradio==5.6.0
+groundingdino-py==0.4.0
+opencv-python==4.10.0.84
