@@ -13,6 +13,26 @@ This project leverages state-of-the-art object detection and segmentation models
 - Integrate the **Fooocus inpainting API**(https://github.com/lllyasviel/Fooocus.git) (via FastAPI on local port 1505) to seamlessly regenerate backgrounds based on text prompts.
 
 ---
+## Example Results
+<table>
+  <thead>
+    <tr>
+      <th>Input Image</th>
+      <th>Detection Prompt</th>
+      <th>Background Prompt</th>
+      <th>Processed Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="examples/input.jpeg" width="150"></td>
+      <td>Coke Can</td>
+      <td>A diet coke in 80s Diner environment</td>
+      <td><img src="examples/output.png" width="150"></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Getting Started
 
@@ -86,25 +106,7 @@ result_image, mask = image_processor.process_image(image_rgb, prompt, bg_prompt)
 cv2.imwrite("result.png", cv2.cvtColor(result_image, cv2.COLOR_RGB2BGR))
 ```
 
-### Example Results
-<table>
-  <thead>
-    <tr>
-      <th>Input Image</th>
-      <th>Detection Prompt</th>
-      <th>Background Prompt</th>
-      <th>Processed Image</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="examples/input.jpeg" width="150"></td>
-      <td>Coke Can</td>
-      <td>A diet coke in 80s Diner environment</td>
-      <td><img src="examples/output.png" width="150"></td>
-    </tr>
-  </tbody>
-</table>
+
 
 ---
 
