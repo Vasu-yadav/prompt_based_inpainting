@@ -38,11 +38,17 @@ pip install -r requirements.txt
 - Segment Anything (SAM) weights: `models/sam_vit_h_4b8939.pth`(https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)
 
 4. Run the Fooocus inpainting API locally:
-- Ensure Fooocus FastAPI wrapper is running locally at port 1505.
-```bash
-uvicorn api_main:app --host 0.0.0.0 --port 1505
-```
-
+- Follow Below steps to setup Fooocus API
+    1. `cd Fooocus`
+    2. `Docker build -t fooocusapi -f API_Dockerfile.dockerfile .`
+    3. ```
+        docker run -d \
+        --name fooocus_api \
+        -p 0.0.0.0:1505:1505 \
+        --gpus '"device=0"' \
+        -v ./models:/app/models \
+        fooocusapi
+        ```
 ### Running the Gradio App (Demo Interface)
 
 Ensure your Fooocus API is running locally on port `1505`, then launch your Gradio interface:
